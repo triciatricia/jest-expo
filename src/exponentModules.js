@@ -19,4 +19,6 @@ module.exports = [
   {"ExponentImagePicker":[{"launchCameraAsync":"function"},{"launchImageLibraryAsync":"function"}]},
   {"ExponentSegment":[{"initializeIOS":"function"},{"initializeAndroid":"function"},{"identify":"function"},{"identifyWithTraits":"function"},{"track":"function"},{"trackWithProperties":"function"},{"flush":"function"}]},
   {"ExponentUtil":[{"reload":"function"},{"getCurrentLocaleAsync":"function"}]},
+  {"ExponentGyroscope":[{"startObserving":"function"},{"stopObserving":"function"},{"setUpdateInterval":"function"},{"addListener":"function"},{"removeListeners":"function"}]},
+  {"ExponentAccelerometer":[{"startObserving":"function"},{"stopObserving":"function"},{"setUpdateInterval":"function"},{"addListener":"function"},{"removeListeners":"function"}]},
 ];
