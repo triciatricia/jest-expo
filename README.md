@@ -10,7 +10,7 @@ your Exponent apps.
 
   ```js
   "scripts": {
-    "test": "jest"
+    "test": "node_modules/jest/bin/jest.js"
   },
   "jest": {
     "preset": "jest-exponent"

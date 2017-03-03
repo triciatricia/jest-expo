@@ -51,10 +51,10 @@ global.Headers = Headers;
 global.fetch = fetch;
 
 require(
-  'react-native/packager/react-packager/src/Resolver/polyfills/Object.es7'
+  'react-native/packager/src/Resolver/polyfills/Object.es7'
 );
 require(
-  'react-native/packager/react-packager/src/Resolver/polyfills/error-guard'
+  'react-native/packager/src/Resolver/polyfills/error-guard'
 );
 
 const mockNativeModules = require('NativeModules');
