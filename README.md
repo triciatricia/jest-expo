@@ -1,11 +1,11 @@
-# jest-exponent
+# jest-expo
 
 A [Jest](https://facebook.github.io/jest/) preset to painlessly test
-your Exponent apps.
+your Expo apps.
 
 ### Installation
 
-- `yarn add jest-exponent --dev` or `npm i jest-exponent --save-dev`
+- `yarn add jest-expo --dev` or `npm i jest-expo --save-dev`
 - Add the following config to `package.json`:
 
   ```js
@@ -13,7 +13,7 @@ your Exponent apps.
     "test": "node_modules/jest/bin/jest.js"
   },
   "jest": {
-    "preset": "jest-exponent"
+    "preset": "jest-expo"
   }
   ```
 

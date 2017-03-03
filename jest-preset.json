@@ -23,7 +23,7 @@
     "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|exponent|@exponent/*)"
   ],
   "setupFiles": [
-    "<rootDir>/node_modules/jest-exponent/src/setup.js"
+    "<rootDir>/node_modules/jest-expo/src/setup.js"
   ],
   "testEnvironment": "node"
 }
