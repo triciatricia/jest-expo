@@ -2,8 +2,18 @@
 
 const mockReactNative = require('./index');
 
+require.requireActual(
+  'react-native/packager/src/Resolver/polyfills/babelHelpers.js'
+);
+require.requireActual(
+  'react-native/packager/src/Resolver/polyfills/Object.es7.js'
+);
+require.requireActual(
+  'react-native/packager/src/Resolver/polyfills/error-guard'
+);
+
 jest
-  .mock('ReactNativeDefaultInjection')
+  .mock('InitializeCore')
   .mock('Image', () => mockReactNative.mockComponent('Image'))
   .mock('Text', () => mockReactNative.mockComponent('Text'))
   .mock('TextInput', () => mockReactNative.mockComponent('TextInput'))
