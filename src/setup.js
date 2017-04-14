@@ -21,7 +21,8 @@ jest
   .mock('View', () => mockReactNative.mockComponent('View'))
   .mock('ScrollView', () => mockReactNative.mockComponent('ScrollView'))
   .mock('ActivityIndicator', () =>
-    mockReactNative.mockComponent('ActivityIndicator'))
+    mockReactNative.mockComponent('ActivityIndicator')
+  )
   .mock('ListView', () => {
     const RealListView = require.requireActual('ListView');
     const ListView = mockReactNative.mockComponent('ListView');
@@ -69,7 +70,8 @@ const mockImageLoader = {
   get: () => ({
     prefetchImage: jest.fn(),
     getSize: jest.fn((uri, success) =>
-      process.nextTick(() => success(320, 240))),
+      process.nextTick(() => success(320, 240))
+    ),
   }),
 };
 Object.defineProperty(mockNativeModules, 'ImageLoader', mockImageLoader);
@@ -86,7 +88,8 @@ const exponentModuleCustomMocks = {
     ),
     getInfoAsync: jest.fn(() => {
       return new Promise(resolve =>
-        resolve({ exists: true, md5: 'md5', uri: 'uri' }));
+        resolve({ exists: true, md5: 'md5', uri: 'uri' })
+      );
     }),
   },
 };
@@ -99,7 +102,8 @@ exponentModules.forEach(module => {
   moduleProperties.forEach(property => {
     const propertyName = Object.keys(property)[0];
     const propertyType = property[propertyName];
-    const customMock = exponentModuleCustomMocks[moduleName] &&
+    const customMock =
+      exponentModuleCustomMocks[moduleName] &&
       exponentModuleCustomMocks[moduleName][propertyName];
 
     let mockValue;
