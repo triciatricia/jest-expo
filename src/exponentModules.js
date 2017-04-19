@@ -1,20 +1,9 @@
 module.exports = [
   {
-    ExponentFileSystem: [
-      { downloadAsync: 'function' },
-      { getInfoAsync: 'function' },
-      { deleteAsync: 'function' },
-    ],
-  },
-  {
-    ExponentNotifications: [
-      { presentLocalNotification: 'function' },
-      { getExponentPushTokenAsync: 'function' },
-      { scheduleLocalNotification: 'function' },
-      { cancelScheduledNotification: 'function' },
-      { cancelAllScheduledNotifications: 'function' },
-      { getBadgeNumberAsync: 'function' },
-      { setBadgeNumberAsync: 'function' },
+    ExponentAccelerometer: [
+      { setUpdateInterval: 'function' },
+      { addListener: 'function' },
+      { removeListeners: 'function' },
     ],
   },
   {
@@ -28,45 +17,29 @@ module.exports = [
       { setGroup: 'function' },
     ],
   },
-  {
-    ExponentSegment: [
-      { initializeIOS: 'function' },
-      { initializeAndroid: 'function' },
-      { identify: 'function' },
-      { identifyWithTraits: 'function' },
-      { track: 'function' },
-      { trackWithProperties: 'function' },
-      { flush: 'function' },
-    ],
-  },
-  {
-    ExponentUtil: [
-      { reload: 'function' },
-      { getCurrentLocaleAsync: 'function' },
-    ],
-  },
-  {
-    ExponentAccelerometer: [
-      { setUpdateInterval: 'function' },
-      { addListener: 'function' },
-      { removeListeners: 'function' },
-    ],
-  },
   { ExponentAppLoadingManager: [{ finishedAsync: 'function' }] },
   {
     ExponentAudio: [
       { setIsEnabled: 'function' },
+      { setAudioMode: 'function' },
       { load: 'function' },
       { play: 'function' },
       { pause: 'function' },
       { stop: 'function' },
       { unload: 'function' },
       { setPosition: 'function' },
+      { setRate: 'function' },
       { setVolume: 'function' },
       { setIsMuted: 'function' },
       { setIsLooping: 'function' },
       { getStatus: 'function' },
       { setPlaybackFinishedCallback: 'function' },
+      { prepareToRecord: 'function' },
+      { startRecording: 'function' },
+      { pauseRecording: 'function' },
+      { stopRecording: 'function' },
+      { getRecordingStatus: 'function' },
+      { unloadRecorder: 'function' },
     ],
   },
   {
@@ -77,8 +50,33 @@ module.exports = [
     ],
   },
   { ExponentBlurViewManager: [] },
+  {
+    ExponentConstants: [
+      { isDevice: 'boolean' },
+      { linkingUri: 'string' },
+      { deviceId: 'string' },
+      { expoVersion: 'string' },
+      { manifest: 'object' },
+      { deviceName: 'string' },
+      { platform: 'object' },
+      { statusBarHeight: 'number' },
+      { sessionId: 'string' },
+      { systemFonts: 'object' },
+      { deviceYearClass: 'number' },
+      { appOwnership: 'string' },
+    ],
+  },
   { ExponentContacts: [{ getContactsAsync: 'function' }] },
+  { ExponentDocumentPicker: [{ getDocumentAsync: 'function' }] },
+  { ExponentErrorRecovery: [{ setRecoveryProps: 'function' }] },
   { ExponentFacebook: [{ logInWithReadPermissionsAsync: 'function' }] },
+  {
+    ExponentFileSystem: [
+      { downloadAsync: 'function' },
+      { getInfoAsync: 'function' },
+      { deleteAsync: 'function' },
+    ],
+  },
   {
     ExponentFingerprint: [
       { hasHardwareAsync: 'function' },
@@ -103,6 +101,14 @@ module.exports = [
     ],
   },
   { ExponentKeepAwake: [{ activate: 'function' }, { deactivate: 'function' }] },
+  {
+    ExponentLegacyAsyncLocalStorage: [
+      { multiGet: 'function' },
+      { getAllKeys: 'function' },
+      { isMigrationDone: 'function' },
+      { setMigrationDone: 'function' },
+    ],
+  },
   { ExponentLinearGradientManager: [] },
   {
     ExponentLocation: [
@@ -113,7 +119,37 @@ module.exports = [
       { removeListeners: 'function' },
     ],
   },
+  {
+    ExponentNotifications: [
+      { presentLocalNotification: 'function' },
+      { getExponentPushTokenAsync: 'function' },
+      { scheduleLocalNotification: 'function' },
+      { cancelScheduledNotification: 'function' },
+      { cancelAllScheduledNotifications: 'function' },
+      { getBadgeNumberAsync: 'function' },
+      { setBadgeNumberAsync: 'function' },
+    ],
+  },
   { ExponentPermissions: [{ getAsync: 'function' }, { askAsync: 'function' }] },
+  { ExponentSQLite: [{ exec: 'function' }] },
+  { ExponentScope: [] },
+  {
+    ExponentSegment: [
+      { initializeIOS: 'function' },
+      { initializeAndroid: 'function' },
+      { identify: 'function' },
+      { identifyWithTraits: 'function' },
+      { track: 'function' },
+      { trackWithProperties: 'function' },
+      { flush: 'function' },
+    ],
+  },
+  {
+    ExponentUtil: [
+      { reload: 'function' },
+      { getCurrentLocaleAsync: 'function' },
+    ],
+  },
   {
     ExponentVideoManager: [
       { ScaleToFill: 'string' },
@@ -124,24 +160,8 @@ module.exports = [
   },
   {
     ExponentWebBrowser: [
-      { openBrowserAsync: 'function' },
       { dismissBrowser: 'function' },
-    ],
-  },
-  {
-    ExponentConstants: [
-      { isDevice: 'boolean' },
-      { linkingUri: 'string' },
-      { deviceId: 'string' },
-      { manifest: 'object' },
-      { deviceName: 'string' },
-      { platform: 'object' },
-      { statusBarHeight: 'number' },
-      { sessionId: 'string' },
-      { systemFonts: 'object' },
-      { exponentVersion: 'string' },
-      { deviceYearClass: 'number' },
-      { appOwnership: 'string' },
+      { openBrowserAsync: 'function' },
     ],
   },
 ];
