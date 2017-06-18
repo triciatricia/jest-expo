@@ -59,6 +59,8 @@ exponentModules.forEach(module => {
       mockValue = customMock;
     } else if (propertyType === 'function') {
       mockValue = jest.fn();
+    } else if (propertyType === 'number') {
+      mockValue = 1;
     } else {
       mockValue = jest.mock();
     }
