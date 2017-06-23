@@ -11,6 +11,12 @@ global.fetch = fetch;
 
 const mockNativeModules = require('NativeModules');
 
+// window isn't defined as of react-native 0.45+ it seems
+if (typeof window !== 'object') {
+  global.window = global;
+  global.window.navigator = global.window.navigator || {};
+}
+
 const mockEmptyObject = {};
 const mockImageLoader = {
   configurable: true,
@@ -25,8 +31,8 @@ const mockImageLoader = {
 Object.defineProperty(mockNativeModules, 'ImageLoader', mockImageLoader);
 Object.defineProperty(mockNativeModules, 'ImageViewManager', mockImageLoader);
 
-const exponentModules = require('./exponentModules');
-const exponentModuleCustomMocks = {
+const expoModules = require('./expoModules');
+const expoModuleCustomMocks = {
   ExponentFontLoader: {
     loadAsync: jest.fn(() => new Promise(resolve => resolve())),
   },
@@ -42,7 +48,7 @@ const exponentModuleCustomMocks = {
   },
 };
 
-exponentModules.forEach(module => {
+expoModules.forEach(module => {
   const moduleName = Object.keys(module)[0];
   const moduleProperties = module[moduleName];
   const mockedProperties = {};
@@ -51,8 +57,8 @@ exponentModules.forEach(module => {
     const propertyName = Object.keys(property)[0];
     const propertyType = property[propertyName];
     const customMock =
-      exponentModuleCustomMocks[moduleName] &&
-      exponentModuleCustomMocks[moduleName][propertyName];
+      expoModuleCustomMocks[moduleName] &&
+      expoModuleCustomMocks[moduleName][propertyName];
 
     let mockValue;
     if (customMock) {
