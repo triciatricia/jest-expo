@@ -17,7 +17,6 @@ if (typeof window !== 'object') {
   global.window.navigator = global.window.navigator || {};
 }
 
-const mockEmptyObject = {};
 const mockImageLoader = {
   configurable: true,
   enumerable: true,
