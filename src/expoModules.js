@@ -2,6 +2,7 @@ module.exports = [
   {
     ExponentNotifications: [
       { getDevicePushTokenAsync: 'function' },
+      { getExpoPushTokenAsync: 'function' },
       { getExponentPushTokenAsync: 'function' },
       { presentLocalNotification: 'function' },
       { scheduleLocalNotification: 'function' },
