@@ -95,3 +95,17 @@ jest.mock('react-native/Libraries/Image/AssetRegistry', () => ({
 }));
 
 jest.doMock('NativeModules', () => mockNativeModules);
+
+/* Use React Native Modal component for tests */
+const ReactNative = require.requireActual('react-native');
+const Modal = ReactNative.Modal;
+const Expo = require.requireActual('expo');
+
+Object.defineProperty(Expo, 'Modal', {
+  enumerable: true,
+  get: () => Modal,
+});
+Object.defineProperty(ReactNative, 'Modal', {
+  enumerable: true,
+  get: () => Modal,
+});
