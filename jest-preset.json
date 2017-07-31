@@ -3,7 +3,8 @@
     "defaultPlatform": "ios",
     "platforms": [
       "android",
-      "ios"
+      "ios",
+      "native"
     ],
     "providesModuleNodeModules": [
       "react",
