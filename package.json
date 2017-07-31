@@ -1,6 +1,6 @@
 {
   "name": "jest-expo",
-  "version": "19.0.2",
+  "version": "19.0.4",
   "license": "MIT",
   "peerDependencies": {
     "react-native": "*"

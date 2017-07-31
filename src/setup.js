@@ -3,6 +3,15 @@
 // setup react-native jest preset
 require.requireActual('react-native/jest/setup');
 
+// REMOVE(brent): when we update to SDK20/rn0.47 we can remove this
+jest.doMock('Linking', () => ({
+  openURL: jest.fn(),
+  canOpenURL: jest.fn(() => new Promise(resolve => resolve(true))),
+  addEventListener: jest.fn(),
+  getInitialURL: jest.fn(() => new Promise(resolve => resolve())),
+  removeEventListener: jest.fn(),
+}));
+
 const { Response, Request, Headers, fetch } = require('whatwg-fetch');
 global.Response = Response;
 global.Request = Request;
