@@ -1,16 +1,8 @@
+/**
+ * Adds Expo-related mocks to the Jest environment. Jest runs this setup module
+ * after it runs the React Native setup module.
+ */
 'use strict';
-
-// setup react-native jest preset
-require.requireActual('react-native/jest/setup');
-
-// REMOVE(brent): when we update to SDK20/rn0.47 we can remove this
-jest.doMock('Linking', () => ({
-  openURL: jest.fn(),
-  canOpenURL: jest.fn(() => new Promise(resolve => resolve(true))),
-  addEventListener: jest.fn(),
-  getInitialURL: jest.fn(() => new Promise(resolve => resolve())),
-  removeEventListener: jest.fn(),
-}));
 
 const { Response, Request, Headers, fetch } = require('whatwg-fetch');
 global.Response = Response;
@@ -23,7 +15,7 @@ const mockNativeModules = require('NativeModules');
 // window isn't defined as of react-native 0.45+ it seems
 if (typeof window !== 'object') {
   global.window = global;
-  global.window.navigator = global.window.navigator || {};
+  global.window.navigator = {};
 }
 
 const mockImageLoader = {
@@ -41,18 +33,14 @@ Object.defineProperty(mockNativeModules, 'ImageViewManager', mockImageLoader);
 
 const expoModules = require('./expoModules');
 const expoModuleCustomMocks = {
-  ExponentFontLoader: {
-    loadAsync: jest.fn(() => new Promise(resolve => resolve())),
-  },
   ExponentFileSystem: {
-    downloadAsync: jest.fn(
-      () => new Promise(resolve => resolve({ md5: 'md5', uri: 'uri' }))
+    downloadAsync: jest.fn(() => Promise.resolve({ md5: 'md5', uri: 'uri' })),
+    getInfoAsync: jest.fn(() =>
+      Promise.resolve({ exists: true, md5: 'md5', uri: 'uri' })
     ),
-    getInfoAsync: jest.fn(() => {
-      return new Promise(resolve =>
-        resolve({ exists: true, md5: 'md5', uri: 'uri' })
-      );
-    }),
+  },
+  ExponentFontLoader: {
+    loadAsync: jest.fn(() => Promise.resolve()),
   },
 };
 

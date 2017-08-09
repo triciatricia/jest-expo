@@ -1,7 +1,6 @@
 # jest-expo
 
-A [Jest](https://facebook.github.io/jest/) preset to painlessly test
-your Expo apps.
+A [Jest](https://facebook.github.io/jest/) preset to painlessly test your Expo apps.
 
 ### Installation
 
@@ -10,7 +9,7 @@ your Expo apps.
 
   ```js
   "scripts": {
-    "test": "node_modules/jest/bin/jest.js"
+    "test": "jest"
   },
   "jest": {
     "preset": "jest-expo"
