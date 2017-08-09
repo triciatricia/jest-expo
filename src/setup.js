@@ -44,17 +44,17 @@ const expoModuleCustomMocks = {
   },
 };
 
-expoModules.forEach(module => {
-  const moduleName = Object.keys(module)[0];
-  const moduleProperties = module[moduleName];
+for (let moduleName of Object.keys(expoModules)) {
+  const moduleProperties = expoModules[moduleName];
   const mockedProperties = {};
 
-  moduleProperties.forEach(property => {
-    const propertyName = Object.keys(property)[0];
-    const propertyType = property[propertyName];
+  for (let propertyName of Object.keys(moduleProperties)) {
+    const property = moduleProperties[propertyName];
+    const propertyType = property.type;
     const customMock =
-      expoModuleCustomMocks[moduleName] &&
-      expoModuleCustomMocks[moduleName][propertyName];
+      (expoModuleCustomMocks[moduleName] &&
+        expoModuleCustomMocks[moduleName][propertyName]) ||
+      property.mock;
 
     let mockValue;
     if (customMock) {
@@ -63,18 +63,22 @@ expoModules.forEach(module => {
       mockValue = jest.fn();
     } else if (propertyType === 'number') {
       mockValue = 1;
+    } else if (propertyType === 'string') {
+      mockValue = 'mock';
+    } else if (propertyType === 'array') {
+      mockValue = [];
     } else {
-      mockValue = jest.mock();
+      mockValue = {};
     }
 
     mockedProperties[propertyName] = mockValue;
-  });
+  }
 
   Object.defineProperty(mockNativeModules, moduleName, {
     enumerable: true,
     get: () => mockedProperties,
   });
-});
+}
 
 jest.mock('react-native/Libraries/Image/AssetRegistry', () => ({
   registerAsset: jest.fn(() => 1),
