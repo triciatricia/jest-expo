@@ -9,7 +9,7 @@ A [Jest](https://facebook.github.io/jest/) preset to painlessly test your Expo a
 
   ```js
   "scripts": {
-    "test": "jest"
+    "test": "node_modules/.bin/jest"
   },
   "jest": {
     "preset": "jest-expo"
@@ -29,4 +29,3 @@ A [Jest](https://facebook.github.io/jest/) preset to painlessly test your Expo a
 ### Learning Jest
 
 [Read the excellent documentation](https://facebook.github.io/jest/)
-
