@@ -5,6 +5,7 @@
  */
 'use strict';
 
+const assert = require('assert');
 const fs = require('fs');
 const path = require('path');
 
@@ -27,12 +28,13 @@ function generateJestPreset() {
     '^[./a-zA-Z0-9$_-]+\\.(ttf|m4v|mov|mp4|mpeg|mpg|webm|aac|aiff|caf|m4a|mp3|wav|html|pdf|obj)$';
   expoJestPreset.moduleNameMapper[assetNamePattern] = 'RelativeImageStub';
 
-  if (!expoJestPreset.transformIgnorePatterns) {
-    expoJestPreset.transformIgnorePatterns = [];
-  }
-  expoJestPreset.transformIgnorePatterns.push(
-    '/node_modules/(?!(expo(nent)?|@expo(nent)?/.*|react-navigation))'
-  );
+  assert(Array.isArray(expoJestPreset.transformIgnorePatterns));
+  assert.deepEqual(expoJestPreset.transformIgnorePatterns, [
+    'node_modules/(?!(jest-)?react-native|react-clone-referenced-element)',
+  ]);
+  expoJestPreset.transformIgnorePatterns = [
+    'node_modules/(?!((jest-)?react-native|react-clone-referenced-element|expo(nent)?|@expo(nent)?/.*|react-navigation))',
+  ];
 
   if (!expoJestPreset.setupFiles) {
     expoJestPreset.setupFiles = [];
