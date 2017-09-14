@@ -10,7 +10,7 @@ global.Request = Request;
 global.Headers = Headers;
 global.fetch = fetch;
 
-const mockNativeModules = require('NativeModules');
+const mockNativeModules = require('react-native/Libraries/BatchedBridge/NativeModules');
 
 // window isn't defined as of react-native 0.45+ it seems
 if (typeof window !== 'object') {
@@ -95,7 +95,10 @@ jest.mock('react-native/Libraries/Image/AssetRegistry', () => ({
   })),
 }));
 
-jest.doMock('NativeModules', () => mockNativeModules);
+jest.doMock(
+  'react-native/Libraries/BatchedBridge/NativeModules',
+  () => mockNativeModules
+);
 
 /* Use React Native Modal component for tests */
 const ReactNative = require.requireActual('react-native');
