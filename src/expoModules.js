@@ -30,6 +30,8 @@ module.exports = {
     addListener: { type: 'function', functionType: 'async' },
     removeListeners: { type: 'function', functionType: 'async' },
     setUpdateInterval: { type: 'function', functionType: 'async' },
+    startObserving: { type: 'function', functionType: 'async' },
+    stopObserving: { type: 'function', functionType: 'async' },
   },
   ExponentAmplitude: {
     clearUserProperties: { type: 'function', functionType: 'async' },
@@ -63,7 +65,7 @@ module.exports = {
     appOwnership: { type: 'string' },
     deviceId: { type: 'string' },
     deviceName: { type: 'string' },
-    deviceYearClass: { type: 'number', mock: 2017 },
+    deviceYearClass: { type: 'number', mock: 2016 },
     expoVersion: { type: 'string' },
     getWebViewUserAgentAsync: { type: 'function', functionType: 'promise' },
     isDevice: { type: 'boolean' },
@@ -76,6 +78,14 @@ module.exports = {
   },
   ExponentContacts: {
     getContactsAsync: { type: 'function', functionType: 'promise' },
+  },
+  ExponentDeviceMotion: {
+    Gravity: { type: 'number', mock: 9.8100004196167 },
+    addListener: { type: 'function', functionType: 'async' },
+    removeListeners: { type: 'function', functionType: 'async' },
+    setUpdateInterval: { type: 'function', functionType: 'async' },
+    startObserving: { type: 'function', functionType: 'async' },
+    stopObserving: { type: 'function', functionType: 'async' },
   },
   ExponentDocumentPicker: {
     getDocumentAsync: { type: 'function', functionType: 'promise' },
@@ -118,12 +128,18 @@ module.exports = {
     createObjectAsync: { type: 'function', functionType: 'promise' },
     destroyObjectAsync: { type: 'function', functionType: 'async' },
   },
-  ExponentGLViewManager: {},
+  ExponentGLViewManager: {
+    getARMatrices: { type: 'function', functionType: 'sync' },
+    startARSession: { type: 'function', functionType: 'promise' },
+    stopARSession: { type: 'function', functionType: 'promise' },
+  },
   ExponentGoogle: { logInAsync: { type: 'function', functionType: 'promise' } },
   ExponentGyroscope: {
     addListener: { type: 'function', functionType: 'async' },
     removeListeners: { type: 'function', functionType: 'async' },
     setUpdateInterval: { type: 'function', functionType: 'async' },
+    startObserving: { type: 'function', functionType: 'async' },
+    stopObserving: { type: 'function', functionType: 'async' },
   },
   ExponentImagePicker: {
     launchCameraAsync: { type: 'function', functionType: 'promise' },
@@ -155,11 +171,15 @@ module.exports = {
     addListener: { type: 'function', functionType: 'async' },
     removeListeners: { type: 'function', functionType: 'async' },
     setUpdateInterval: { type: 'function', functionType: 'async' },
+    startObserving: { type: 'function', functionType: 'async' },
+    stopObserving: { type: 'function', functionType: 'async' },
   },
   ExponentMagnetometerUncalibrated: {
     addListener: { type: 'function', functionType: 'async' },
     removeListeners: { type: 'function', functionType: 'async' },
     setUpdateInterval: { type: 'function', functionType: 'async' },
+    startObserving: { type: 'function', functionType: 'async' },
+    stopObserving: { type: 'function', functionType: 'async' },
   },
   ExponentNotifications: {
     cancelAllScheduledNotifications: {
