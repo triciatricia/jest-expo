@@ -60,7 +60,7 @@ for (let moduleName of Object.keys(expoModules)) {
     if (customMock) {
       mockValue = customMock;
     } else if (propertyType === 'function') {
-      if (propertyName.endsWith('Async')) {
+      if (property.functionType === 'promise') {
         mockValue = jest.fn(() => Promise.resolve());
       } else {
         mockValue = jest.fn();
