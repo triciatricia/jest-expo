@@ -12,6 +12,8 @@ global.fetch = fetch;
 
 const mockNativeModules = require('react-native/Libraries/BatchedBridge/NativeModules');
 
+const createMockConstants = require('./createMockConstants');
+
 // window isn't defined as of react-native 0.45+ it seems
 if (typeof window !== 'object') {
   global.window = global;
@@ -33,6 +35,7 @@ Object.defineProperty(mockNativeModules, 'ImageViewManager', mockImageLoader);
 
 const expoModules = require('./expoModules');
 const expoModuleCustomMocks = {
+  ExponentConstants: createMockConstants(),
   ExponentFileSystem: {
     downloadAsync: jest.fn(() => Promise.resolve({ md5: 'md5', uri: 'uri' })),
     getInfoAsync: jest.fn(() =>
