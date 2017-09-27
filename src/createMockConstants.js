@@ -1,6 +1,7 @@
 'use strict';
 
 const fs = require('fs');
+const JSON5 = require('json5');
 const os = require('os');
 const path = require('path');
 
@@ -45,7 +46,7 @@ function _readAppConfiguration() {
     currentDirectory !== os.homedir()
   );
 
-  return json != null ? JSON.parse(json) : null;
+  return json != null ? JSON5.parse(json) : null;
 }
 
 function _safeReadFile(filePath, options) {
