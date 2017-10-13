@@ -1,6 +1,6 @@
 {
   "name": "jest-expo",
-  "version": "21.0.2-SNAPSHOT.d993f41d",
+  "version": "22.0.0-alpha.0",
   "license": "MIT",
   "scripts": {
     "generate": "tools/generate-jest-preset.js"
@@ -16,9 +16,9 @@
     "babel-jest": "^20.0.3",
     "jest": "^20.0.4",
     "json5": "^0.5.1",
-    "react-test-renderer": "16.0.0-alpha.12"
+    "react-test-renderer": "16.0.0-beta.5"
   },
   "devDependencies": {
-    "react": "16.0.0-alpha.12"
+    "react": "16.0.0-beta.5"
   }
 }

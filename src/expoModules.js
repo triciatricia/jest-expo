@@ -49,6 +49,10 @@ module.exports = {
     Type: { type: 'object' },
   },
   ExponentBlurViewManager: {},
+  ExponentBrightness: {
+    getBrightnessAsync: { type: 'function', functionType: 'promise' },
+    setBrightnessAsync: { type: 'function', functionType: 'promise' },
+  },
   ExponentCameraManager: {
     AutoFocus: { type: 'object' },
     FlashMode: { type: 'object' },
@@ -64,6 +68,7 @@ module.exports = {
     deviceId: { type: 'string' },
     deviceName: { type: 'string' },
     deviceYearClass: { type: 'number', mock: 2017 },
+    expoRuntimeVersion: { type: 'string' },
     expoVersion: { type: 'string' },
     getWebViewUserAgentAsync: { type: 'function', functionType: 'promise' },
     isDevice: { type: 'boolean' },
@@ -126,8 +131,8 @@ module.exports = {
   },
   ExponentGLViewManager: {
     getARMatrices: { type: 'function', functionType: 'sync' },
-    startARSession: { type: 'function', functionType: 'promise' },
-    stopARSession: { type: 'function', functionType: 'promise' },
+    startARSessionAsync: { type: 'function', functionType: 'promise' },
+    stopARSessionAsync: { type: 'function', functionType: 'promise' },
   },
   ExponentGoogle: { logInAsync: { type: 'function', functionType: 'promise' } },
   ExponentGyroscope: {
@@ -246,7 +251,9 @@ module.exports = {
     setFullscreen: { type: 'function', functionType: 'promise' },
   },
   ExponentWebBrowser: {
+    dismissAuthSession: { type: 'function', functionType: 'async' },
     dismissBrowser: { type: 'function', functionType: 'async' },
+    openAuthSessionAsync: { type: 'function', functionType: 'promise' },
     openBrowserAsync: { type: 'function', functionType: 'promise' },
   },
 };
