@@ -82,6 +82,7 @@ for (let moduleName of Object.keys(expoModules)) {
   }
 
   Object.defineProperty(mockNativeModules, moduleName, {
+    configurable: true,
     enumerable: true,
     get: () => mockedProperties,
   });
