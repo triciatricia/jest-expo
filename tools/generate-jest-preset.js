@@ -12,10 +12,7 @@ const path = require('path');
 function generateJestPreset() {
   // Load the React Native Jest preset
   const rnLabPath = path.resolve(__dirname, '../../../react-native-lab');
-  const rnJestPresetPath = path.join(
-    rnLabPath,
-    'react-native/jest-preset.json'
-  );
+  const rnJestPresetPath = path.join(rnLabPath, 'react-native/jest-preset.json');
   const rnJestPreset = require(rnJestPresetPath);
 
   // Derive the Expo Jest preset from the React Native one
@@ -39,9 +36,7 @@ function generateJestPreset() {
   if (!expoJestPreset.setupFiles) {
     expoJestPreset.setupFiles = [];
   }
-  expoJestPreset.setupFiles.push(
-    '<rootDir>/node_modules/jest-expo/src/setup.js'
-  );
+  expoJestPreset.setupFiles.push('<rootDir>/node_modules/jest-expo/src/setup.js');
 
   // Save the Expo Jest preset
   fs.writeFileSync(

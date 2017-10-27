@@ -40,11 +40,7 @@ function _readAppConfiguration() {
     json = _safeReadFile(candidatePath, 'utf8');
 
     nextDirectory = path.dirname(currentDirectory);
-  } while (
-    json == null &&
-    currentDirectory !== nextDirectory &&
-    currentDirectory !== os.homedir()
-  );
+  } while (json == null && currentDirectory !== nextDirectory && currentDirectory !== os.homedir());
 
   return json != null ? JSON5.parse(json) : null;
 }
