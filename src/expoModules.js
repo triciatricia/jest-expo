@@ -16,10 +16,7 @@ module.exports = {
     setErrorCallbackForSound: { type: 'function', functionType: 'async' },
     setStatusForSound: { type: 'function', functionType: 'promise' },
     setStatusForVideo: { type: 'function', functionType: 'promise' },
-    setStatusUpdateCallbackForSound: {
-      type: 'function',
-      functionType: 'async',
-    },
+    setStatusUpdateCallbackForSound: { type: 'function', functionType: 'async' },
     startAudioRecording: { type: 'function', functionType: 'promise' },
     stopAudioRecording: { type: 'function', functionType: 'promise' },
     unloadAudioRecorder: { type: 'function', functionType: 'promise' },
@@ -40,14 +37,7 @@ module.exports = {
     setUserId: { type: 'function', functionType: 'async' },
     setUserProperties: { type: 'function', functionType: 'async' },
   },
-  ExponentAppLoadingManager: {
-    finishedAsync: { type: 'function', functionType: 'promise' },
-  },
-  ExponentBarCodeScannerManager: {
-    BarCodeType: { type: 'object' },
-    TorchMode: { type: 'object' },
-    Type: { type: 'object' },
-  },
+  ExponentAppLoadingManager: { finishedAsync: { type: 'function', functionType: 'promise' } },
   ExponentBlurViewManager: {},
   ExponentBrightness: {
     getBrightnessAsync: { type: 'function', functionType: 'promise' },
@@ -55,6 +45,7 @@ module.exports = {
   },
   ExponentCameraManager: {
     AutoFocus: { type: 'object' },
+    BarCodeType: { type: 'object' },
     FlashMode: { type: 'object' },
     Type: { type: 'object' },
     VideoQuality: { type: 'object' },
@@ -79,26 +70,17 @@ module.exports = {
     statusBarHeight: { type: 'number', mock: 20 },
     systemFonts: { type: 'array' },
   },
-  ExponentContacts: {
-    getContactsAsync: { type: 'function', functionType: 'promise' },
-  },
+  ExponentContacts: { getContactsAsync: { type: 'function', functionType: 'promise' } },
   ExponentDeviceMotion: {
     Gravity: { type: 'number', mock: 9.8100004196167 },
     addListener: { type: 'function', functionType: 'async' },
     removeListeners: { type: 'function', functionType: 'async' },
     setUpdateInterval: { type: 'function', functionType: 'async' },
   },
-  ExponentDocumentPicker: {
-    getDocumentAsync: { type: 'function', functionType: 'promise' },
-  },
-  ExponentErrorRecovery: {
-    setRecoveryProps: { type: 'function', functionType: 'async' },
-  },
+  ExponentDocumentPicker: { getDocumentAsync: { type: 'function', functionType: 'promise' } },
+  ExponentErrorRecovery: { setRecoveryProps: { type: 'function', functionType: 'async' } },
   ExponentFacebook: {
-    logInWithReadPermissionsAsync: {
-      type: 'function',
-      functionType: 'promise',
-    },
+    logInWithReadPermissionsAsync: { type: 'function', functionType: 'promise' },
   },
   ExponentFileSystem: {
     addListener: { type: 'function', functionType: 'async' },
@@ -122,9 +104,7 @@ module.exports = {
     hasHardwareAsync: { type: 'function', functionType: 'promise' },
     isEnrolledAsync: { type: 'function', functionType: 'promise' },
   },
-  ExponentFontLoader: {
-    loadAsync: { type: 'function', functionType: 'promise' },
-  },
+  ExponentFontLoader: { loadAsync: { type: 'function', functionType: 'promise' } },
   ExponentGLObjectManager: {
     createObjectAsync: { type: 'function', functionType: 'promise' },
     destroyObjectAsync: { type: 'function', functionType: 'async' },
@@ -177,10 +157,7 @@ module.exports = {
     setUpdateInterval: { type: 'function', functionType: 'async' },
   },
   ExponentNotifications: {
-    cancelAllScheduledNotifications: {
-      type: 'function',
-      functionType: 'async',
-    },
+    cancelAllScheduledNotifications: { type: 'function', functionType: 'async' },
     cancelScheduledNotification: { type: 'function', functionType: 'async' },
     getBadgeNumberAsync: { type: 'function', functionType: 'promise' },
     getDevicePushTokenAsync: { type: 'function', functionType: 'promise' },
@@ -203,9 +180,7 @@ module.exports = {
   },
   ExponentSQLite: { exec: { type: 'function', functionType: 'promise' } },
   ExponentScopedModuleRegistry: {},
-  ExponentScreenOrientation: {
-    allow: { type: 'function', functionType: 'async' },
-  },
+  ExponentScreenOrientation: { allow: { type: 'function', functionType: 'async' } },
   ExponentSecureStore: {
     AFTER_FIRST_UNLOCK: { type: 'number', mock: 0 },
     AFTER_FIRST_UNLOCK_THIS_DEVICE_ONLY: { type: 'number', mock: 1 },
