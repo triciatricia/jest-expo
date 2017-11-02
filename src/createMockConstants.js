@@ -18,6 +18,8 @@ module.exports = function createMockConstants() {
   const mockLinkingUri = `exp://${mockDeveloper}/${mockSlug}/+`;
 
   return {
+    deviceId: 'a01650bb-918d-40be-87be-cf376ab6189f',
+    deviceName: 'Test Phone',
     linkingUri: mockLinkingUri,
     manifest: {
       slug: mockSlug,
