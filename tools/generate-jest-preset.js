@@ -22,7 +22,7 @@ function generateJestPreset() {
     expoJestPreset.moduleNameMapper = {};
   }
   const assetNamePattern =
-    '^[./a-zA-Z0-9$_-]+\\.(ttf|m4v|mov|mp4|mpeg|mpg|webm|aac|aiff|caf|m4a|mp3|wav|html|pdf|obj)$';
+    '^[./a-zA-Z0-9$_-]+\\.(ttf|otf|m4v|mov|mp4|mpeg|mpg|webm|aac|aiff|caf|m4a|mp3|wav|html|pdf|obj)$';
   expoJestPreset.moduleNameMapper[assetNamePattern] = 'RelativeImageStub';
 
   assert(Array.isArray(expoJestPreset.transformIgnorePatterns));
