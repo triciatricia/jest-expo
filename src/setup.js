@@ -33,6 +33,9 @@ Object.defineProperty(mockNativeModules, 'ImageViewManager', mockImageLoader);
 
 const expoModules = require('./expoModules');
 const expoModuleCustomMocks = {
+  ExponentCameraManager: {
+    FaceDetection: { Landmarks: {}, Classifications: {}, Mode: {} },
+  },
   ExponentConstants: createMockConstants(),
   ExponentFileSystem: {
     downloadAsync: jest.fn(() => Promise.resolve({ md5: 'md5', uri: 'uri' })),
