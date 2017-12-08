@@ -105,7 +105,7 @@ module.exports = {
     appOwnership: { type: 'string' },
     deviceId: { type: 'string' },
     deviceName: { type: 'string' },
-    deviceYearClass: { type: 'number', mock: 2016 },
+    deviceYearClass: { type: 'number', mock: 2017 },
     expoRuntimeVersion: { type: 'string' },
     expoVersion: { type: 'string' },
     getWebViewUserAgentAsync: { type: 'function', functionType: 'promise' },
@@ -114,7 +114,7 @@ module.exports = {
     manifest: { type: 'object' },
     platform: { type: 'object' },
     sessionId: { type: 'string' },
-    statusBarHeight: { type: 'number', mock: 20 },
+    statusBarHeight: { type: 'number', mock: 44 },
     systemFonts: { type: 'array' },
   },
   ExponentContacts: { getContactsAsync: { type: 'function', functionType: 'promise' } },
@@ -157,7 +157,11 @@ module.exports = {
     destroyObjectAsync: { type: 'function', functionType: 'async' },
   },
   ExponentGLViewManager: {
+    getARLightEstimation: { type: 'function', functionType: 'sync' },
     getARMatrices: { type: 'function', functionType: 'sync' },
+    getRawFeaturePoints: { type: 'function', functionType: 'sync' },
+    setIsLightEstimationEnabled: { type: 'function', functionType: 'async' },
+    setIsPlaneDetectionEnabled: { type: 'function', functionType: 'async' },
     startARSessionAsync: { type: 'function', functionType: 'promise' },
     stopARSessionAsync: { type: 'function', functionType: 'promise' },
   },
@@ -167,6 +171,7 @@ module.exports = {
     removeListeners: { type: 'function', functionType: 'async' },
     setUpdateInterval: { type: 'function', functionType: 'async' },
   },
+  ExponentImageManipulator: { manipulate: { type: 'function', functionType: 'promise' } },
   ExponentImagePicker: {
     launchCameraAsync: { type: 'function', functionType: 'promise' },
     launchImageLibraryAsync: { type: 'function', functionType: 'promise' },
@@ -174,12 +179,6 @@ module.exports = {
   ExponentKeepAwake: {
     activate: { type: 'function', functionType: 'async' },
     deactivate: { type: 'function', functionType: 'async' },
-  },
-  ExponentLegacyAsyncLocalStorage: {
-    getAllKeys: { type: 'function', functionType: 'async' },
-    isMigrationDone: { type: 'function', functionType: 'promise' },
-    multiGet: { type: 'function', functionType: 'async' },
-    setMigrationDone: { type: 'function', functionType: 'promise' },
   },
   ExponentLinearGradientManager: {},
   ExponentLocation: {
